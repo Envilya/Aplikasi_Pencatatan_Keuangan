@@ -137,7 +137,7 @@ class _HomePageState extends State<HomePage> {
                 title: Text("Rp 5.000.000"),
                 subtitle: Text("Gaji Bulanan"),
                 leading: Container(
-                  child: Icon(Icons.upload, color: Colors.green),
+                  child: Icon(Icons.download, color: Colors.indigo),
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(8)),
