@@ -1,3 +1,4 @@
+import 'package:aplikasi_pencatatan_keuangan/model/database.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -10,6 +11,16 @@ class CategoryPage extends StatefulWidget {
 
 class _CategoryPageState extends State<CategoryPage> {
   bool isExpense = true;
+  final AppDatabase database = AppDatabase();
+  TextEditingController categoryNameController = TextEditingController();
+
+  Future insert(String name, int type) async {
+    DateTime now = DateTime.now();
+    final row = await database.into(database.categories).insert(
+        CategoriesCompanion.insert(
+            name: name, type: type, createdAt: now, updatedAt: now));
+    print(row);
+  }
 
   void openDialog() {
     showDialog(
@@ -28,11 +39,19 @@ class _CategoryPageState extends State<CategoryPage> {
                   ),
                   SizedBox(height: 10),
                   TextFormField(
+                    controller: categoryNameController,
                     decoration: InputDecoration(
                         border: OutlineInputBorder(), hintText: "Nama"),
                   ),
                   SizedBox(height: 10),
-                  ElevatedButton(onPressed: () {}, child: Text("Simpan"))
+                  ElevatedButton(
+                      onPressed: () {
+                        insert(categoryNameController.text, isExpense ? 2 : 1);
+                        Navigator.of(context, rootNavigator: true)
+                            .pop('dialog');
+                        setState(() {});
+                      },
+                      child: Text("Simpan"))
                 ],
               )),
             ),
