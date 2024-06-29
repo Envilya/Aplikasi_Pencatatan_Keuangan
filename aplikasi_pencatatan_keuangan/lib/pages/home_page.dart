@@ -14,11 +14,13 @@ class _HomePageState extends State<HomePage> {
     return SingleChildScrollView(
       child: SafeArea(
           child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
             padding: const EdgeInsets.all(16),
             child: Container(
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
                     children: [
@@ -32,12 +34,48 @@ class _HomePageState extends State<HomePage> {
                         width: 15,
                       ),
                       Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
                             "Pemasukan",
-                            style: GoogleFonts.montserrat(color: Colors.white),
+                            style: GoogleFonts.poppins(
+                                color: Colors.white, fontSize: 14),
                           ),
-                          Text("Rp. 4.000.000")
+                          SizedBox(height: 10),
+                          Text(
+                            "Rp 4.000.000",
+                            style: GoogleFonts.poppins(
+                                color: Colors.white, fontSize: 14),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        child: Icon(Icons.upload, color: Colors.red),
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(8)),
+                      ),
+                      SizedBox(
+                        width: 15,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Pengeluaran",
+                            style: GoogleFonts.poppins(
+                                color: Colors.white, fontSize: 14),
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            "Rp 4.000.000",
+                            style: GoogleFonts.poppins(
+                                color: Colors.white, fontSize: 14),
+                          )
                         ],
                       )
                     ],
@@ -49,6 +87,62 @@ class _HomePageState extends State<HomePage> {
               decoration: BoxDecoration(
                   color: Colors.blueGrey,
                   borderRadius: BorderRadius.circular(16)),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: Text("Transaksi",
+                style: GoogleFonts.poppins(
+                    fontSize: 16, fontWeight: FontWeight.bold)),
+          ),
+
+          // Start: List Transaksi
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Card(
+              elevation: 10,
+              child: ListTile(
+                trailing: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(Icons.delete),
+                    SizedBox(width: 10),
+                    Icon(Icons.edit)
+                  ],
+                ),
+                title: Text("Rp 20.000"),
+                subtitle: Text("Makan Siang"),
+                leading: Container(
+                  child: Icon(Icons.upload, color: Colors.red),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(8)),
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Card(
+              elevation: 10,
+              child: ListTile(
+                trailing: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(Icons.delete),
+                    SizedBox(width: 10),
+                    Icon(Icons.edit)
+                  ],
+                ),
+                title: Text("Rp 5.000.000"),
+                subtitle: Text("Gaji Bulanan"),
+                leading: Container(
+                  child: Icon(Icons.upload, color: Colors.green),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(8)),
+                ),
+              ),
             ),
           )
         ],
