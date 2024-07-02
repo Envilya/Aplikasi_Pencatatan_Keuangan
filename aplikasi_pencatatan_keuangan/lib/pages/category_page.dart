@@ -103,7 +103,7 @@ class _CategoryPageState extends State<CategoryPage> {
               leading: (isExpense)
                   ? Icon(Icons.upload, color: Colors.red)
                   : Icon(Icons.download, color: Colors.indigo),
-              title: Text("Sedekah"),
+              title: Text("Apa Gitu"),
               trailing: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
