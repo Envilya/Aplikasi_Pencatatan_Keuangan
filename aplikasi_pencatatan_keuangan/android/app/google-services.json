@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "6705375096",
+    "project_id": "pencatatan-keuangan-7cb6d",
+    "storage_bucket": "pencatatan-keuangan-7cb6d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:6705375096:android:2c8cb918545c5eb0640a8d",
+        "android_client_info": {
+          "package_name": "com.example.aplikasi_pencatatan_keuangan"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCI_swE2lkOcFUJ153BHvk82x1MKp42jy0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
